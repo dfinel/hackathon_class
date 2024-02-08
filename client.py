@@ -2,7 +2,7 @@ import requests
 import json
 
 # URL of your Flask app
-url = 'http://127.0.0.1:5000/process_test_data'
+url = 'http://18.153.11.39:5000/process_test_data'
 
 # JSON data to send
 data = {

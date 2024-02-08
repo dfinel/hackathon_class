@@ -31,8 +31,6 @@ def get_xtest(X_test,X_train = X_train):
     X_test_nom = onehot(X_test)
     X_test_num = minmaxscaler_xtest(X_test)
     X_test = pd.concat([X_test_num, X_test_nom], axis=1)
-    print('X_test columns : ', X_test.columns)
-    print('X_train columns :', X_train.columns)
     X_test.columns = X_train.columns
     return X_test
 

@@ -1,9 +1,7 @@
 import pickle
 
-from sklearn.linear_model import Ridge, HuberRegressor
-from sklearn.model_selection import train_test_split
+from sklearn.linear_model import Ridge
 import pandas as pd
-from sklearn.ensemble import GradientBoostingRegressor
 from sklearn.preprocessing import MinMaxScaler, OneHotEncoder
 
 
@@ -53,10 +51,10 @@ def get_xtrain(X_train):
 
 
 def get_model(X_train,y_train):
-    hr = HuberRegressor(epsilon=1.13, alpha=0.1, max_iter=150)
-    hr.fit(X_train, y_train)
+    ridge = Ridge(alpha = 2.5)
+    ridge.fit(X_train, y_train)
     with open('ridge.pkl', 'wb') as file:
-        pickle.dump(hr,file)
+        pickle.dump(ridge,file)
 
 
 def main_func():
