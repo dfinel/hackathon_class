@@ -1,5 +1,5 @@
 import pickle
-from flask import Flask,request,jsonify
+from flask import Flask,request
 import pandas as pd
 
 
@@ -70,7 +70,7 @@ def process_test_data():
     return str(prediction[0])
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(ip = '0.0.0.0',debug=True)
 
 
 
